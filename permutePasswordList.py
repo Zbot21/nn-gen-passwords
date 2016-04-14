@@ -22,7 +22,7 @@ def permutePassword(password, depth=1):
         return list()  # base case for recursion
     new_passwords = set()
     new_passwords.add(password)
-    for letter in password:  # Try to replace each letter
+    for letter in set(password):  # Try to replace each letter
         replacements = common_replacements.get(letter.capitalize(), list())
         # print(", ".join(replacements))
         for r in replacements:  # Using each replacement
